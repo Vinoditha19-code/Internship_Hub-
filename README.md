@@ -391,8 +391,6 @@ After successful authentication:
 
 The backend provides API services to support authentication, recruitment, professional networking, and platform management.
 
-**Note:** Refer to the backend source code for the complete list of implemented API routes and endpoint details.
-
 ---
 
 ## 🖥️ Application Screenshots
