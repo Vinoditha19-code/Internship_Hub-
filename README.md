@@ -48,14 +48,14 @@ User Experience and Security
 
 🛠️ Technology Stack
 
-|----------------------|--------------------------------------------------------------------------------------------------|
+
 | Layer                |                                 Technologies                                                     |
-|----------------------|--------------------------------------------------------------------------------------------------|
+
 |  Frontend            |       React 18, Vite, React Router, Tailwind CSS, Lucide React, Recharts, React Hot Toast, Axios |
 |  Backend             |       Node.js, Express.js, JWT, bcrypt, Multer, Helmet, express-rate-limit                       |
 |  Database            |       Supabase (PostgreSQL) using @supabase/supabase-js                                          |
 |  Development Tools   |        Git, GitHub, Nodemon                                                                      |
-|----------------------|--------------------------------------------------------------------------------------------------|
+
 
 <img width="657" height="531" alt="Screenshot 2026-10-31 132552" src="https://github.com/user-attachments/assets/3b640ac6-bc0d-458c-b7c3-159b4755cd34" />
 
