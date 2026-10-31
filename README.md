@@ -397,8 +397,6 @@ The backend provides API services to support authentication, recruitment, profes
 
 ## 🖥️ Application Screenshots
 
-Add application screenshots here to demonstrate the user interface and major functionalities.
-
 <!-- Replace the image URL below with your actual GitHub screenshot URL -->
 
 ![Internship Hub Application](https://github.com/user-attachments/assets/3b640ac6-bc0d-458c-b7c3-159b4755cd34)
