@@ -57,28 +57,9 @@ User Experience and Security
 |  Development Tools   |        Git, GitHub, Nodemon                                                                      |
 |----------------------|--------------------------------------------------------------------------------------------------|
 
-internshipProject-main/
-│
-├── frontend_final_fixed_from_upload/
-│   └── src/
-│       ├── api/             # API configuration and Axios helpers
-│       ├── components/      # Reusable UI components
-│       ├── context/         # Authentication and application state
-│       ├── pages/           # Application pages and dashboards
-│       └── styles.css       # Global styles and theme
-│
-├── backend_final_real/
-│   ├── config/              # Database configuration
-│   ├── controllers/         # Application business logic
-│   ├── middleware/          # Authentication and authorization
-│   ├── routes/              # REST API route definitions
-│   ├── utils/               # Validation and helper functions
-│   ├── supabase_schema.sql  # Main database schema
-│   ├── social_schema.sql    # Social networking database schema
-│   ├── seedAdmin.js         # Administrator account creation
-│   └── seedDemo.js          # Sample data generation
-│
-└── README.md
+<img width="657" height="531" alt="Screenshot 2026-10-31 132552" src="https://github.com/user-attachments/assets/3b640ac6-bc0d-458c-b7c3-159b4755cd34" />
+
+
 
 ⚡ Getting Started
 
@@ -111,3 +92,88 @@ Installation and Execution
 
 The frontend application will run at http://localhost:5173.
 Complete the database configuration and administrator setup before logging in.
+
+🗄️ Database Configuration (Supabase)
+      Register for an account at Supabase.
+      Create a new Supabase project.
+      Navigate to the SQL Editor.
+      Execute the following SQL files in the specified order:
+      backend_final_real/supabase_schema.sql – Creates the main application tables, including users, jobs, and applications.
+      backend_final_real/social_schema.sql – Creates additional tables for connections, posts, likes, comments, endorsements, education, and experience records.
+      Navigate to Project Settings → API.
+      Copy the project URL and service role key for backend configuration.
+      Security Note: The Supabase service role key provides privileged database access. Store it securely in the backend environment file. Never expose it through frontend code or upload it to GitHub.
+
+🔑 Environment Configuration
+
+Create a .env file inside the backend_final_real directory.
+Example configuration:
+
+  # Supabase Database
+  SUPABASE_URL=https://your-project-ref.supabase.co
+  SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+  
+  # Authentication
+  JWT_SECRET=your-secure-random-secret
+  
+  # Backend Server
+  PORT=5000
+  CORS_ORIGINS=http://localhost:5173,http://localhost:5174
+  
+  # Email Configuration (Optional)
+  EMAIL_USER=your@gmail.com
+  EMAIL_PASS=your-app-password
+
+If the backend API uses a different address, configure VITE_API_BASE_URL in the frontend environment file. The default API address is http://localhost:5000/api.
+
+👑 Administrator Account
+
+Administrator registration is handled separately from normal user registration. The public registration process is limited to student and employer accounts.
+
+Default Administrator Credentials
+Field                                        Details
+Email                                        admin@careerguide.com
+Password                                     Admin@123
+
+ Creating the Administrator Account
+
+  Run the following commands from the backend directory:
+    npm run seed:admin
+  
+  To configure custom administrator credentials:
+  Windows PowerShell:
+    $env:ADMIN_EMAIL="you@example.com"; $env:ADMIN_PASSWORD="YourStrongPass"; npm run seed:admin
+  
+  Linux / macOS:
+    ADMIN_EMAIL=you@example.com ADMIN_PASSWORD=YourStrongPass npm run seed:admin
+  
+  For security, replace the default password after the first login. Running the administrator seed command again resets the account password to the configured default or custom value.
+
+  🌱 Sample Data
+
+The application includes a demo-data generation script that populates the database with example users, job vacancies, applications, professional profiles, and networking activities.
+
+Run:
+  npm run seed:demo
+
+
+👥 User Roles and Permissions
+  The platform provides three different account types, each with specific functionalities.
+
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+|    User Role     |                                                          Available Functionalities                                                       |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+|    Student       | Create professional profiles, search and save jobs, submit applications, receive job recommendations, analyse CVs, publish posts,        |
+|                  | and connect with other users.                                                                                                            |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+|    Employer      | Create and manage job advertisements, review applicants, communicate with candidates, maintain company profiles,                         |
+|                  |   and participate in professional networking.                                                                                            |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+|   Administrator  | Approve or reject job advertisements, manage platform users, block or remove accounts, and monitor overall system statistics.            |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+
+After authentication, students and employers are directed to the home feed, whereas administrators are taken to the administration dashboard.
+
+
+
+  
