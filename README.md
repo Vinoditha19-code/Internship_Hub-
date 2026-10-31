@@ -57,4 +57,57 @@ User Experience and Security
 |  Development Tools   |        Git, GitHub, Nodemon                                                                      |
 |----------------------|--------------------------------------------------------------------------------------------------|
 
+internshipProject-main/
+│
+├── frontend_final_fixed_from_upload/
+│   └── src/
+│       ├── api/             # API configuration and Axios helpers
+│       ├── components/      # Reusable UI components
+│       ├── context/         # Authentication and application state
+│       ├── pages/           # Application pages and dashboards
+│       └── styles.css       # Global styles and theme
+│
+├── backend_final_real/
+│   ├── config/              # Database configuration
+│   ├── controllers/         # Application business logic
+│   ├── middleware/          # Authentication and authorization
+│   ├── routes/              # REST API route definitions
+│   ├── utils/               # Validation and helper functions
+│   ├── supabase_schema.sql  # Main database schema
+│   ├── social_schema.sql    # Social networking database schema
+│   ├── seedAdmin.js         # Administrator account creation
+│   └── seedDemo.js          # Sample data generation
+│
+└── README.md
 
+⚡ Getting Started
+
+Prerequisites
+  Make sure the following tools and services are available:
+  Node.js version 18 or later
+  npm (Node Package Manager)
+  A Supabase account and project
+  Git
+
+Installation and Execution
+  Step 1: Clone the repository
+    git clone https://github.com/Thaksigan23/career-guidance-system.git
+    cd career-guidance-system
+    
+  Step 2: Configure the backend
+    cd backend_final_real
+    npm install
+
+   Create a .env file and configure the required environment variables.
+   Start the backend server:
+      npm run dev
+   The backend API will be available at http://localhost:5000.
+
+  Step 3: Start the frontend
+  Open another terminal:
+    cd frontend_final_fixed_from_upload
+    npm install
+    npm run dev
+
+The frontend application will run at http://localhost:5173.
+Complete the database configuration and administrator setup before logging in.
